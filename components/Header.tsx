@@ -8,12 +8,12 @@ function Header() {
     <header className='sticky top-0 flex flex-items-start justify-between p-5 max-w-7xl mx-auto xl:items-center z-30'>
       <motion.div
         initial={{
-          y: -500,
+          x: -500,
           opacity: 0,
           scale: 0.5
         }}
         animate={{
-          y: 0,
+          x: 0,
           opacity: 1,
           scale: 1
         }}
@@ -29,12 +29,12 @@ function Header() {
 
       <motion.div
         initial={{
-          y: -500,
+          x: 500,
           opacity: 0,
           scale: 0.5
         }}
         animate={{
-          y: 0,
+          x: 0,
           opacity: 1,
           scale: 1
         }}
