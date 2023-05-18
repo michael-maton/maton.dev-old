@@ -8,8 +8,8 @@
     "start": "next start",
     "lint": "eslint \"{app,components}/**/*.{js,jsx,ts,tsx}\"",
     "typecheck": "tsc",
-    "format:check": "npx prettier --check \"**/*.{js,jsx,ts,tsx,json}\"",
-    "format": "npx prettier --write \"**/*.{js,jsx,ts,tsx,json}\""
+    "format:check": "pnpm prettier --check \"**/*.{js,jsx,ts,tsx,json}\"",
+    "format": "pnpm prettier --write \"**/*.{js,jsx,ts,tsx,json}\""
   },
   "husky": {
     "hooks": {
