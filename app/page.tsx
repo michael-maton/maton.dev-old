@@ -1,6 +1,7 @@
 import Head from 'next/head';
 
 const x;
+const x;
 
 export default function Home() {
   return (
