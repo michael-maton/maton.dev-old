@@ -12,7 +12,7 @@ function Experience() {
       <motion.img
         initial={{ y: -100, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
-        transition={{ duration: 1 }}
+        transition={{ duration: 1.5 }}
         viewport={{ once: true }}
         className='w-32 h-32 object-center object-cover xl:w-[200px] xl:h-[200px]'
         src='/nf.svg'
