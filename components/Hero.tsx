@@ -12,8 +12,13 @@ function Hero() {
     delaySpeed: 1500
   });
   return (
-    <div className='h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden'>
+    <div className='h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden relative'>
       {/* <BackgroundCircles /> */}
+
+      {/* <div
+        className='w-full absolute top-[30%] bg-[#F7AB0A]/10 left-0 h-[500px]
+      -skew-y-12'
+      /> */}
       <div className='relative flex h-32 w-32 justify-center'>
         <Image
           className='relative rounded-full mx-auto object-cover'
@@ -32,18 +37,18 @@ function Hero() {
         </h1>
 
         <div className='pt-5'>
-          <Link href='#about'>
+          <a href='#about'>
             <button className='hero-button'>About</button>
-          </Link>
-          <Link href='#experience'>
+          </a>
+          <a href='#experience'>
             <button className='hero-button'>Experience</button>
-          </Link>
-          <Link href='#skills'>
+          </a>
+          <a href='#skills'>
             <button className='hero-button'>Skills</button>
-          </Link>
-          <Link href='#projects'>
+          </a>
+          <a href='#projects'>
             <button className='hero-button'>Projects</button>
-          </Link>
+          </a>
         </div>
       </div>
     </div>
