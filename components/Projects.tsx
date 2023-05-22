@@ -14,7 +14,10 @@ function Projects() {
     >
       <h3 className='absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl'>Projects</h3>
 
-      <div className='flex relative w-full overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20'>
+      <div
+        className='flex relative w-full overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20
+       scrollbar-thin scrollbar-track-gray/20 scrollbar-thumb-[#F7AB0A]-80'
+      >
         {projects.map((p, i) => {
           return (
             <div
@@ -29,6 +32,8 @@ function Projects() {
                 viewport={{ once: true }}
                 src='/about.png'
                 alt='Project image'
+                width={300}
+                height={300}
               />
 
               <div className='space-y-10 px-0 md:px-10 max-w-6xl'>
