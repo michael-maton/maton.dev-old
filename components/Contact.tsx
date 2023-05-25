@@ -1,7 +1,8 @@
 'use client';
 import React from 'react';
-import { PhoneIcon, MapPinIcon, EnvelopeIcon } from '@heroicons/react/24/solid';
+// import { PhoneIcon, MapPinIcon, EnvelopeIcon } from '@heroicons/react/24/solid';
 import { useForm, SubmitHandler } from 'react-hook-form';
+// import Link from 'next/link';
 
 type Inputs = {
   name: string;
