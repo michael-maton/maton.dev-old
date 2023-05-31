@@ -46,9 +46,13 @@ export default function Home() {
         <Contact />
       </section>
 
-      <footer className='sticky bottom-5 right-5 w-full cursor-pointer' onClick={scrollToTop}>
-        <div className='flex items-center justify-center '>
-          <ArrowUpCircleIcon className='text-[#F7AB0A] h-12 w-12 animate-pulse' />
+      <footer className='mb-10'>
+        <div className='flex items-center justify-center'>
+          <ArrowUpCircleIcon
+            className='opacity-20 filter grayscale hover:grayscale-0 
+          hover:text-[#F7AB0A] h-12 w-12 hover:opacity-80 cursor-pointer'
+            onClick={scrollToTop}
+          />
         </div>
       </footer>
     </main>
