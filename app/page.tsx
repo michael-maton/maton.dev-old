@@ -14,16 +14,12 @@ import { fetchSkills } from '@/utils/fetchSkills';
 import { fetchSocials } from '../utils/fetchSocials';
 import { fetchProjects } from '@/utils/fetchProjects';
 
-type Data = {
-  experiences: Experience[];
-  pageInfo: PageInfo;
-  projects: Project[];
-  skills: Skill[];
-  socials: Social[];
-};
-
 export default async function Home() {
-  const { experiences, pageInfo, projects, skills, socials }: Data = await getData();
+  const experiences: Experience[] = (await fetchExperience(60)) || [];
+  const pageInfo: PageInfo = (await fetchPageInfo(60)) || {};
+  const projects: Project[] = (await fetchProjects(60)) || [];
+  const skills: Skill[] = (await fetchSkills(60)) || [];
+  const socials: Social[] = (await fetchSocials(60)) || [];
 
   const scrollToTop = () => {
     const topElement = document.getElementById('hero');
@@ -74,19 +70,3 @@ export default async function Home() {
     </main>
   );
 }
-
-export const getData = async (): Promise<Data> => {
-  const experiences: Experience[] = await fetchExperience(60);
-  const pageInfo: PageInfo = await fetchPageInfo(60);
-  const projects: Project[] = await fetchProjects(60);
-  const skills: Skill[] = await fetchSkills(60);
-  const socials: Social[] = await fetchSocials(60);
-
-  return {
-    experiences,
-    pageInfo,
-    projects,
-    skills,
-    socials
-  };
-};
