@@ -2,8 +2,13 @@
 import React from 'react';
 import { SocialIcon } from 'react-social-icons';
 import { motion } from 'framer-motion';
+import { Social } from '@/typings';
 
-function Header() {
+type Props = {
+  socials: Social[];
+};
+
+function Header({ socials }: Props) {
   const scrollToContact = () => {
     const topElement = document.getElementById('contact');
     if (topElement) {
@@ -28,9 +33,9 @@ function Header() {
         }}
         className='flex flex-row items-center'
       >
-        <SocialIcon url='https://www.linkedin.com/in/michaeljmaton/' fgColor='gray' bgColor='transparent' />
-        <SocialIcon url='https://github.com/michael-maton' fgColor='gray' bgColor='transparent' />
-        <SocialIcon url='https://gitlab.com/michael-maton' fgColor='gray' bgColor='transparent' />
+        {socials.map(social => (
+          <SocialIcon key={social._id} url={social.url} fgColor='gray' bgColor='transparent' />
+        ))}
       </motion.div>
 
       <motion.div

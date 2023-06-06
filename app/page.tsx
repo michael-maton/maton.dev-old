@@ -7,8 +7,24 @@ import Skills from '@/components/Skills';
 import Projects from '@/components/Projects';
 import Contact from '@/components/Contact';
 import { ArrowUpCircleIcon } from '@heroicons/react/24/outline';
+import { Experience, PageInfo, Project, Skill, Social } from '@/typings';
+import { fetchPageInfo } from '@/utils/fetchPageInfo';
+import { fetchExperience } from '@/utils/fetchExperiences';
+import { fetchSkills } from '@/utils/fetchSkills';
+import { fetchSocials } from '../utils/fetchSocials';
+import { fetchProjects } from '@/utils/fetchProjects';
 
-export default function Home() {
+type Data = {
+  experiences: Experience[];
+  pageInfo: PageInfo;
+  projects: Project[];
+  skills: Skill[];
+  socials: Social[];
+};
+
+export default async function Home() {
+  const { experiences, pageInfo, projects, skills, socials }: Data = await getData();
+
   const scrollToTop = () => {
     const topElement = document.getElementById('hero');
     if (topElement) {
@@ -20,7 +36,7 @@ export default function Home() {
       className='bg-[rgb{36,36,36}] text-white h-screen overflow-y-scroll overflow-x-hidden z-0
     scrollbar scrollbar-track-gray/20 scrollbar-thumb-[#F7AB0A]/20'
     >
-      <Header />
+      <Header socials={socials} />
 
       <section id='hero' className='snap-start'>
         <Hero />
@@ -58,3 +74,19 @@ export default function Home() {
     </main>
   );
 }
+
+export const getData = async (): Promise<Data> => {
+  const experiences: Experience[] = await fetchExperience(60);
+  const pageInfo: PageInfo = await fetchPageInfo(60);
+  const projects: Project[] = await fetchProjects(60);
+  const skills: Skill[] = await fetchSkills(60);
+  const socials: Social[] = await fetchSocials(60);
+
+  return {
+    experiences,
+    pageInfo,
+    projects,
+    skills,
+    socials
+  };
+};
