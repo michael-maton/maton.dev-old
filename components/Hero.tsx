@@ -1,28 +1,42 @@
 'use client'; // to make component client based for react-simple-typewriter
-import React from 'react';
+import React, { useMemo } from 'react';
 import Image from 'next/image';
 import BackgroundCircles from '@/components/BackgroundCircles';
 import { Cursor, useTypewriter } from 'react-simple-typewriter';
-import Link from 'next/link';
+import { PageInfo } from '@/typings';
+import { urlFor } from '@/sanity';
 
-function Hero() {
+type Props = {
+  pageInfo: PageInfo;
+};
+
+function Hero({ pageInfo }: Props) {
   const [text, count] = useTypewriter({
-    words: ['Hi, my name is Michael', 'Hi, my name is Michael', 'Hi, my name is Michael'],
+    words: [`Hi, my name is ${pageInfo?.name}`, `I'm a ${pageInfo?.role}`, `Let's build something together`],
     loop: true,
     delaySpeed: 1500
   });
+
+  const loader = useMemo(() => {
+    return () => {
+      return urlFor(pageInfo?.profilePic).url();
+    };
+  }, [pageInfo?.profilePic]);
+
   return (
     <div className='h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden relative'>
-      {/* <BackgroundCircles /> */}
+      {/* <BackgroundCircles />
 
-      {/* <div
+      <div
         className='w-full absolute top-[30%] bg-[#F7AB0A]/10 left-0 h-[500px]
       -skew-y-12'
       /> */}
       <div className='relative flex h-32 w-32 justify-center'>
         <Image
           className='relative rounded-full mx-auto object-cover'
-          src='/me.png'
+          loader={loader}
+          unoptimized
+          src={urlFor(pageInfo?.profilePic).url()}
           alt='Picture of the author'
           fill
           priority

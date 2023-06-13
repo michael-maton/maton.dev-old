@@ -15,11 +15,15 @@ import { fetchSocials } from '../utils/fetchSocials';
 import { fetchProjects } from '@/utils/fetchProjects';
 
 export default async function Home() {
-  const experiences: Experience[] = (await fetchExperience(60)) || [];
-  const pageInfo: PageInfo = (await fetchPageInfo(60)) || {};
-  const projects: Project[] = (await fetchProjects(60)) || [];
-  const skills: Skill[] = (await fetchSkills(60)) || [];
-  const socials: Social[] = (await fetchSocials(60)) || [];
+  const promises = [fetchExperience(60), fetchPageInfo(60), fetchProjects(60), fetchSkills(60), fetchSocials(60)];
+
+  const [experiences, pageInfo, projects, skills, socials] = await Promise.all(promises);
+
+  const experiencesResult: Experience[] = (experiences as Experience[]) || [];
+  const pageInfoResult: PageInfo = (pageInfo as PageInfo) || {};
+  const projectsResult: Project[] = (projects as Project[]) || [];
+  const skillsResult: Skill[] = (skills as Skill[]) || [];
+  const socialsResult: Social[] = (socials as Social[]) || [];
 
   const scrollToTop = () => {
     const topElement = document.getElementById('hero');
@@ -32,10 +36,10 @@ export default async function Home() {
       className='bg-[rgb{36,36,36}] text-white h-screen overflow-y-scroll overflow-x-hidden z-0
     scrollbar scrollbar-track-gray/20 scrollbar-thumb-[#F7AB0A]/20'
     >
-      <Header socials={socials} />
+      <Header socials={socialsResult} />
 
       <section id='hero' className='snap-start'>
-        <Hero />
+        <Hero pageInfo={pageInfoResult} />
       </section>
 
       <section id='about' className='snap-center'>
