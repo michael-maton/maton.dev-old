@@ -47,7 +47,7 @@ export default async function Home() {
       </section>
 
       <section id='experience' className='snap-center'>
-        <Work />
+        <Work experiences={experiencesResult} />
       </section>
 
       <section id='skills' className='snap-start'>
