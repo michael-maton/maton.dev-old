@@ -43,7 +43,7 @@ export default async function Home() {
       </section>
 
       <section id='about' className='snap-center'>
-        <About />
+        <About pageInfo={pageInfoResult} />
       </section>
 
       <section id='experience' className='snap-center'>

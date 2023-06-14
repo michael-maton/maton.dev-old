@@ -1,7 +1,7 @@
 'use client'; // to make component client based for react-simple-typewriter
 import React, { useMemo } from 'react';
 import Image from 'next/image';
-import BackgroundCircles from '@/components/BackgroundCircles';
+// import BackgroundCircles from '@/components/BackgroundCircles';
 import { Cursor, useTypewriter } from 'react-simple-typewriter';
 import { PageInfo } from '@/typings';
 import { urlFor } from '@/sanity';
@@ -19,9 +19,9 @@ function Hero({ pageInfo }: Props) {
 
   const loader = useMemo(() => {
     return () => {
-      return urlFor(pageInfo?.profilePic).url();
+      return urlFor(pageInfo?.heroImage).url();
     };
-  }, [pageInfo?.profilePic]);
+  }, [pageInfo?.heroImage]);
 
   return (
     <div className='h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden relative'>
@@ -36,7 +36,7 @@ function Hero({ pageInfo }: Props) {
           className='relative rounded-full mx-auto object-cover'
           loader={loader}
           unoptimized
-          src={urlFor(pageInfo?.profilePic).url()}
+          src={urlFor(pageInfo?.heroImage).url()}
           alt='Picture of the author'
           fill
           priority
@@ -44,7 +44,7 @@ function Hero({ pageInfo }: Props) {
         />
       </div>
       <div className='z-20'>
-        <h2 className='text-sm uppercase text-gray-500 pb-2 tracking-[15px]'>Software Developer</h2>
+        <h2 className='text-sm uppercase text-gray-500 pb-2 tracking-[15px]'>{pageInfo?.role}</h2>
         <h1 className='text-2xl lg:text-6xl font-semibold px-10'>
           <span className='mr-3'>{text}</span>
           <Cursor cursorColor='white' />
