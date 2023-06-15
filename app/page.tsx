@@ -55,7 +55,7 @@ export default async function Home() {
       </section>
 
       <section id='projects' className='snap-start'>
-        <Projects />
+        <Projects projects={projectsResult} />
       </section>
 
       <section id='contact' className='snap-start'>

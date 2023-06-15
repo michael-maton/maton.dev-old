@@ -40,7 +40,7 @@ function Hero({ pageInfo }: Props) {
           alt='Picture of the author'
           fill
           priority
-          style={{ objectFit: 'contain' }}
+          style={{ objectFit: 'fill' }}
         />
       </div>
       <div className='z-20'>
