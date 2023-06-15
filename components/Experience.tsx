@@ -29,18 +29,27 @@ function Experience({ experience }: Props) {
         <h4 className='text-4xl font-light'>{experience?.jobTitle}</h4>
         <p className='font-bold text-2xl mt-1'>{experience?.company}</p>
         <div className='flex space-x-2 my-2'>
-          <img className='h-10 w-10 rounded-full' />
-          <img className='h-10 w-10 rounded-full' />
-          <img className='h-10 w-10 rounded-full' />
-          {/* Tech Used */}
-          {/* Tech Used */}
-          {/* Tech Used */}
+          {experience?.technologies?.map(tech => {
+            return (
+              <motion.img
+                key={tech._id}
+                // initial={{ x: -200, opacity: 0 }}
+                // whileInView={{ x: 0, opacity: 1 }}
+                // transition={{ duration: 1.5 }}
+                // viewport={{ once: true }}
+                className='w-12 h-12'
+                src={urlFor(tech?.skillImage).url()}
+                alt={`${tech?.skillTitle} logo`}
+                // style={{ objectFit: 'contain' }}
+              />
+            );
+          })}
         </div>
         <p className='uppercase py-5 text-gray-300'>
-          {experience?.dateStarted} - {experience?.dateEnded}
+          {experience?.dateStarted} - {experience?.isCurrentlyWorkingHere ? 'Present' : experience?.dateEnded}
         </p>
 
-        <ul className='list-disc space-y-4 ml-5 text-sm'>
+        <ul className='list-disc space-y-4 ml-5 text-sm h-96'>
           {experience?.points?.map((point, idx) => {
             return <li key={idx}>{point}</li>;
           })}
