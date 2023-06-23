@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
-// import { PhoneIcon, MapPinIcon, EnvelopeIcon } from '@heroicons/react/24/solid';
 import { useForm, SubmitHandler } from 'react-hook-form';
+// import { PhoneIcon, MapPinIcon, EnvelopeIcon } from '@heroicons/react/24/solid';
 // import Link from 'next/link';
 
 type Inputs = {
@@ -29,20 +29,20 @@ function Contact() {
 
       <div className='flex flex-col space-y-10'>
         <h4 className='text-4xl font-semibold text-center'>
-          <span className='underline decoration-[#F7AB0A]/50'>Let&apos;s Talk</span>
+          <span className='underline decoration-support/50'>Let&apos;s Talk</span>
         </h4>
 
         {/* <div className='space-y-10'>
           <div className='flex items-center space-x-5 justify-center'>
-            <PhoneIcon className='text-[#F7AB0A] h-7 w-7 animate-pulse' />
+            <PhoneIcon className='text-main h-7 w-7 animate-pulse' />
             <p>+1 (123) 123-1233</p>
           </div>
           <div className='flex items-center space-x-5 justify-center'>
-            <PhoneIcon className='text-[#F7AB0A] h-7 w-7 animate-pulse' />
+            <PhoneIcon className='text-main h-7 w-7 animate-pulse' />
             <p>+1 (123) 123-1233</p>
           </div>
           <div className='flex items-center space-x-5 justify-center'>
-            <PhoneIcon className='text-[#F7AB0A] h-7 w-7 animate-pulse' />
+            <PhoneIcon className='text-main h-7 w-7 animate-pulse' />
             <p>+1 (123) 123-1233</p>
           </div>
         </div> */}
@@ -56,7 +56,7 @@ function Contact() {
           <input {...register('subject')} placeholder='Subject' className='contact-input' type='text' />
 
           <textarea {...register('message')} placeholder='Message' className='contact-input' />
-          <button type='submit' className='bg-[#F7AB0A] py-5 px-10 rounded-md text-black font-bold'>
+          <button type='submit' className='bg-support py-5 px-10 rounded-md text-black font-bold'>
             Submit
           </button>
         </form>

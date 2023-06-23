@@ -31,10 +31,11 @@ export default async function Home() {
       topElement.scrollIntoView({ behavior: 'smooth' });
     }
   };
+
   return (
     <main
-      className='bg-[rgb{36,36,36}] text-white h-screen overflow-y-scroll overflow-x-hidden z-0
-    scrollbar scrollbar-track-gray/20 scrollbar-thumb-[#F7AB0A]/20'
+      className='bg-main text-white h-screen overflow-y-scroll overflow-x-hidden z-0
+    scrollbar scrollbar-track-gray/20 scrollbar-thumb-support/20'
     >
       <Header socials={socialsResult} />
 
@@ -66,7 +67,7 @@ export default async function Home() {
         <div className='flex items-center justify-center'>
           <ArrowUpCircleIcon
             className='opacity-20 filter grayscale hover:grayscale-0 
-          hover:text-[#F7AB0A] h-12 w-12 hover:opacity-80 cursor-pointer'
+          hover:text-support h-12 w-12 hover:opacity-80 cursor-pointer'
             onClick={scrollToTop}
           />
         </div>

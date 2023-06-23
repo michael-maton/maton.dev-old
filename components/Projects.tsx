@@ -21,7 +21,7 @@ function Projects({ projects }: Props) {
 
       <div
         className='flex relative w-full overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20
-       scrollbar-thin scrollbar-track-gray/20 scrollbar-thumb-[#F7AB0A]-80'
+       scrollbar-thin scrollbar-track-gray/20 scrollbar-thumb-main-80'
       >
         {projects.map((project, idx) => {
           return (
@@ -43,7 +43,7 @@ function Projects({ projects }: Props) {
 
               <div className='space-y-10 px-0 md:px-10 max-w-6xl'>
                 <h4 className='text-4xl font-semibold text-center'>
-                  <span className='underline decoration-[#F7AB0A]/50'>
+                  <span className='underline decoration-support/50'>
                     {' '}
                     Project {idx + 1} of {projects.length}
                   </span>
@@ -74,10 +74,10 @@ function Projects({ projects }: Props) {
         })}
       </div>
 
-      <div
-        className='w-full absolute top-[30%] bg-[#F7AB0A]/10 left-0 h-[500px]
+      {/* <div
+        className='w-[100%] absolute top-[30%] bg-support/10 h-[500px]
       skew-y-12'
-      />
+      /> */}
     </motion.div>
   );
 }

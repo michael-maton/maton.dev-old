@@ -23,12 +23,15 @@ function Hero({ pageInfo }: Props) {
     };
   }, [pageInfo?.heroImage]);
 
+  const heroStyle =
+    'text-lg mx-2 uppercase tracking-widest text-gray-500 transition-all hover:border-main/40 border-b-2 border-transparent';
+
   return (
     <div className='h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden relative'>
       {/* <BackgroundCircles />
 
       <div
-        className='w-full absolute top-[30%] bg-[#F7AB0A]/10 left-0 h-[500px]
+        className='w-full absolute top-[30%] bg-main/10 left-0 h-[500px]
       -skew-y-12'
       /> */}
       <div className='relative flex h-32 w-32 justify-center'>
@@ -52,16 +55,16 @@ function Hero({ pageInfo }: Props) {
 
         <div className='pt-5'>
           <a href='#about'>
-            <button className='hero-button'>About</button>
+            <button className={heroStyle}>About</button>
           </a>
           <a href='#experience'>
-            <button className='hero-button'>Experience</button>
+            <button className={heroStyle}>Experience</button>
           </a>
           <a href='#skills'>
-            <button className='hero-button'>Skills</button>
+            <button className={heroStyle}>Skills</button>
           </a>
           <a href='#projects'>
-            <button className='hero-button'>Projects</button>
+            <button className={heroStyle}>Projects</button>
           </a>
         </div>
       </div>
