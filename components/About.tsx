@@ -16,7 +16,6 @@ function About({ pageInfo }: Props) {
         initial={{ x: -200, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
         transition={{ duration: 1 }}
-        // viewport={{ once: true }}
         className='-mb-20 mt-5 md:mb-0 flex-shrink-0 w-52 h-52 rounded-full object-cover md:rounded-lg md:w-64 md:h-64 xl:w-[500px] xl:h-[500px]'
         src={urlFor(pageInfo?.profilePic).url()}
         alt='SVG of person working at a desk'

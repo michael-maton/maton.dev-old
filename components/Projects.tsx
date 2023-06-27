@@ -54,14 +54,9 @@ function Projects({ projects }: Props) {
                     return (
                       <motion.img
                         key={tech._id}
-                        // initial={{ x: -200, opacity: 0 }}
-                        // whileInView={{ x: 0, opacity: 1 }}
-                        // transition={{ duration: 1.5 }}
-                        // viewport={{ once: true }}
                         className='w-12 h-12'
                         src={urlFor(tech?.skillImage).url()}
                         alt={`${tech?.skillTitle} logo`}
-                        // style={{ objectFit: 'contain' }}
                       />
                     );
                   })}
@@ -73,11 +68,6 @@ function Projects({ projects }: Props) {
           );
         })}
       </div>
-
-      {/* <div
-        className='w-[100%] absolute top-[30%] bg-support/10 h-[500px]
-      skew-y-12'
-      /> */}
     </motion.div>
   );
 }

@@ -33,14 +33,9 @@ function Experience({ experience }: Props) {
             return (
               <motion.img
                 key={tech._id}
-                // initial={{ x: -200, opacity: 0 }}
-                // whileInView={{ x: 0, opacity: 1 }}
-                // transition={{ duration: 1.5 }}
-                // viewport={{ once: true }}
                 className='w-12 h-12'
                 src={urlFor(tech?.skillImage).url()}
                 alt={`${tech?.skillTitle} logo`}
-                // style={{ objectFit: 'contain' }}
               />
             );
           })}

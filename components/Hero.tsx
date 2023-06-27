@@ -1,7 +1,6 @@
 'use client'; // to make component client based for react-simple-typewriter
 import React, { useMemo } from 'react';
 import Image from 'next/image';
-// import BackgroundCircles from '@/components/BackgroundCircles';
 import { Cursor, useTypewriter } from 'react-simple-typewriter';
 import { PageInfo } from '@/typings';
 import { urlFor } from '@/sanity';
@@ -28,12 +27,6 @@ function Hero({ pageInfo }: Props) {
 
   return (
     <div className='h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden relative'>
-      {/* <BackgroundCircles />
-
-      <div
-        className='w-full absolute top-[30%] bg-main/10 left-0 h-[500px]
-      -skew-y-12'
-      /> */}
       <div className='relative flex h-32 w-32 justify-center'>
         <Image
           className='relative rounded-full mx-auto object-cover'
