@@ -43,11 +43,12 @@ function Projects({ projects }: Props) {
 
               <div className='space-y-10 px-0 md:px-10 max-w-6xl'>
                 <h4 className='text-4xl font-semibold text-center'>
-                  <span className='underline decoration-support/50'>
+                  {/* <span className='underline decoration-support/50'>
                     {' '}
                     Project {idx + 1} of {projects.length}
-                  </span>
-                  : {project?.projectTitle}
+                  </span> */}
+                  {/* :  */}
+                  {project?.projectTitle}
                 </h4>
                 <div className='flex space-x-2 my-2 justify-center items-center'>
                   {project?.technologies.map(tech => {

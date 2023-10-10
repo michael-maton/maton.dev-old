@@ -43,16 +43,16 @@ export default async function Home() {
         <Hero pageInfo={pageInfoResult} />
       </section>
 
+      {/* <section id='skills' className='snap-start'>
+        <Skills skills={skillsResult} />
+      </section> */}
+
       <section id='about' className='snap-center'>
-        <About pageInfo={pageInfoResult} />
+        <About pageInfo={pageInfoResult} skills={skillsResult} />
       </section>
 
       <section id='experience' className='snap-center'>
         <Work experiences={experiencesResult} />
-      </section>
-
-      <section id='skills' className='snap-start'>
-        <Skills skills={skillsResult} />
       </section>
 
       <section id='projects' className='snap-start'>

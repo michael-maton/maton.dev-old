@@ -44,9 +44,13 @@ function Experience({ experience }: Props) {
           {experience?.dateStarted} - {experience?.isCurrentlyWorkingHere ? 'Present' : experience?.dateEnded}
         </p>
 
-        <ul className='list-disc space-y-4 ml-5 text-sm h-96'>
+        <ul className='list-disc space-y-4 ml-5 lg:text-base h-96 md:space-y-2 md:ml-3 md:text-xs sm:space-y-1 overflow-y-scroll list-inside scrollbar-thin scrollbar-track-gray/20 scrollbar-thumb-main-80 md:text-left'>
           {experience?.points?.map((point, idx) => {
-            return <li key={idx}>{point}</li>;
+            return (
+              <li className='md:text-left' key={idx}>
+                {point}
+              </li>
+            );
           })}
         </ul>
       </div>

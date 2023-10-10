@@ -20,7 +20,7 @@ function Skill({ directionLeft, skill }: Props) {
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
         src={urlFor(skill?.skillImage).url()}
-        className='rounded-full border border-gray-500 object-cover w-14 h-w-14 md:h-28 md:w-28
+        className='rounded-full border border-gray-500 object-cover w-20 h-20 md:h-28 md:w-28
          xl:w-32 xl:h-32 filter group-hover:grayscale transition duration-300 ease-in-out'
       />
       <div
