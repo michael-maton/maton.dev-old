@@ -9,7 +9,7 @@ type Props = {
 
 function Experience({ experience }: Props) {
   return (
-    <article
+    <div
       className='flex flex-col bg-support rounded-lg items-center space-y-7 flex-shrink-0
     w-[500px] md:w-[600px] xl:w-[900px] snap-center p-10 opacity-40 hover:opacity-100 cursor-pointer
     transition-opacity duration-200 overflow-hidden'
@@ -54,7 +54,7 @@ function Experience({ experience }: Props) {
           })}
         </ul>
       </div>
-    </article>
+    </div>
   );
 }
 

@@ -160,9 +160,8 @@ body {
 @layer components {
   .hero-button {
     @apply text-lg mx-2 uppercase tracking-widest text-gray-500 transition-all
-    hover:border-main/40 border-b-2 border-transparent
+    /* hover:border-main/40 border-b-2 border-transparent */
     /* hover:text-main/40 */
-
   }
   .contact-input {
     @apply outline-none bg-slate-400/10 rounded-sm border-b px-6 py-4 border-[#242424]

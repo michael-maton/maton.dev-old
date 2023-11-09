@@ -22,11 +22,10 @@ function Hero({ pageInfo }: Props) {
     };
   }, [pageInfo?.heroImage]);
 
-  const heroStyle =
-    'text-lg mx-2 uppercase tracking-widest text-gray-500 transition-all hover:border-main/40 border-b-2 border-transparent';
+  const heroStyle = 'text-lg mx-2 uppercase tracking-widest text-gray-500 transition-all';
 
   return (
-    <div className='h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden relative'>
+    <div className='bg-main h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden relative'>
       <div className='relative flex h-32 w-32 justify-center'>
         <Image
           className='relative rounded-full mx-auto object-cover'
@@ -53,9 +52,9 @@ function Hero({ pageInfo }: Props) {
           <a href='#experience'>
             <button className={heroStyle}>Experience</button>
           </a>
-          <a href='#skills'>
+          {/* <a href='#skills'>
             <button className={heroStyle}>Skills</button>
-          </a>
+          </a> */}
           <a href='#projects'>
             <button className={heroStyle}>Projects</button>
           </a>

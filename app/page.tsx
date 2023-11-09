@@ -3,7 +3,7 @@ import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
 import Work from '@/components/Work';
-import Skills from '@/components/Skills';
+// import Skills from '@/components/Skills';
 import Projects from '@/components/Projects';
 import Contact from '@/components/Contact';
 import { ArrowUpCircleIcon } from '@heroicons/react/24/outline';
@@ -15,7 +15,7 @@ import { fetchSocials } from '../utils/fetchSocials';
 import { fetchProjects } from '@/utils/fetchProjects';
 
 export default async function Home() {
-  const promises = [fetchExperience(60), fetchPageInfo(60), fetchProjects(60), fetchSkills(60), fetchSocials(60)];
+  const promises = [fetchExperience(), fetchPageInfo(), fetchProjects(), fetchSkills(), fetchSocials()];
 
   const [experiences, pageInfo, projects, skills, socials] = await Promise.all(promises);
 
@@ -35,7 +35,7 @@ export default async function Home() {
   return (
     <main
       className='bg-main text-white h-screen overflow-y-scroll overflow-x-hidden z-0
-    scrollbar scrollbar-track-gray/20 scrollbar-thumb-support/20'
+-   scrollbar scrollbar-track-gray/20 scrollbar-thumb-support/20'
     >
       <Header socials={socialsResult} />
 
