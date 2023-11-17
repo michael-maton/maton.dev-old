@@ -2,8 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { PageInfo, Skill } from '@/typings';
-import Skills from './Skills';
-import { urlFor } from '@/sanity';
+import Skills from '@/components/Skills';
 
 type Props = {
   pageInfo: PageInfo;
@@ -15,6 +14,9 @@ function About({ pageInfo, skills }: Props) {
     <div className='bg-main relative flex flex-col justify-evenly items-center h-screen text-center md:text-left max-w-7xl px-10 mx-auto'>
       <h3 className='top-24 uppercase tracking-[20px] text-gray-500 text-2xl'>About</h3>
       {/* <motion.img
+    <div className='relative flex flex-col justify-evenly items-center h-screen text-center md:text-left md:flex-row max-w-7xl px-10 mx-auto'>
+      <h3 className='absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl'>About</h3>
+      <motion.img
         initial={{ x: -200, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
         transition={{ duration: 1 }}

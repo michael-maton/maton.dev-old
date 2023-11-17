@@ -2,7 +2,7 @@
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
-import Work from '@/components/Work';
+import WorkExp from '@/components/WorkExp';
 // import Skills from '@/components/Skills';
 import Projects from '@/components/Projects';
 import Contact from '@/components/Contact';
@@ -43,16 +43,16 @@ export default async function Home() {
         <Hero pageInfo={pageInfoResult} />
       </section>
 
-      {/* <section id='skills' className='snap-start'>
-        <Skills skills={skillsResult} />
-      </section> */}
-
       <section id='about' className='snap-center'>
         <About pageInfo={pageInfoResult} skills={skillsResult} />
       </section>
 
       <section id='experience' className='snap-center'>
-        <Work experiences={experiencesResult} />
+        <WorkExp experiences={experiencesResult} />
+      </section>
+
+      <section id='skills' className='snap-start'>
+        {/* <Skills skills={skillsResult} /> */}
       </section>
 
       <section id='projects' className='snap-start'>
